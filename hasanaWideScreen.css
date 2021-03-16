@@ -1,0 +1,56 @@
+body {
+  background-color: #fff6e6;
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 140px;
+  font-family: serif;
+  text-transform: lowercase;
+  color: #8a7654;
+  background-image: url("banner.jpg");
+  height: 170px; /* background image height */
+  box-sizing: border-box;
+  margin: 35px 0px;
+  border-top: 5px solid #8a7654;
+  border-bottom: 5px solid #8a7654;
+  padding: 35px 35px 0px; /* top padding = (height - font size) + 5 */
+}
+h1:hover {
+  opacity: 0.75;
+}
+ul {
+  background-color: #8a7654;
+  position: relative;
+  padding: 5px 35px;
+}
+li {
+  font-size: 20px;
+  font-family: serif;
+  text-transform: uppercase;
+  color: #fff6e6;
+  list-style-type: none;
+  display: inline;
+  padding: 6px 15px; /* needs to be 6px or else a line at the bottom appears */
+}
+#cart {
+  position: absolute;
+  right: 35px;
+  bottom: 0px;
+  padding: 5px 15px;
+}
+li:hover {
+  color: #8a7654;
+  background-color: #fff6e6;
+}
+h2 {
+  font-size: 35px;
+  font-weight: normal;
+  margin: 30px 40px;
+}
+p {
+  font-size: 20px;
+  margin: 0px 40px;
+}

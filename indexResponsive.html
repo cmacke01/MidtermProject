@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Home - Hasana</title>
+    <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <style>
+        .footer {
+          bottom: 0px;
+          position: absolute;
+          background-color: #8a7654;
+          width: 100%;
+        }
+
+        table {
+          /* width: 100%; */
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        button {
+          background-color: #fff6e6;
+          padding: 8px;
+          color: #6b9696;
+          font-size: 17px;
+          border-width: 0px;
+          font-family: "Times New Roman", Times, serif;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        button:hover {
+          background-color: #e6dccc;
+        }
+        @media only screen and (max-width: 600px) {
+          button {
+            font-size: 30px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html"> <!-- makes whole block into link -->
+        <h1>hasana</h1>
+    </a>
+
+    <a class="icon">
+      <div class="icon2">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+    </a>
+
+    <div class="noShow" id=menu>
+      <ul>
+          <a href="#"> <!-- TODO: add links -->
+              <li>men</li>
+          </a>
+          <a href="#">
+              <li>women</li>
+          </a>
+          <a href="#">
+              <li>jewelery</li>
+          </a>
+          <a href="#">
+              <li>contact</li>
+          </a>
+          <a href="#">
+              <li>about</li>
+          </a>
+          <a href="#">
+              <li id="cart">cart</li>
+          </a>
+      </ul>
+    </div>
+
+    <div class= 'footer'>
+      <table>
+          <td> <a href="./index.html"> <button class="button button1"> About Us  </button> </a> </td>
+          <td> <a href="./index.html"> <button >Contact Us</button> </a> </td>
+      </table>
+    </div>
+
+<!-- toggle hamburger menu -->
+<script>
+   $(document).ready(function(){
+      $(".icon").click(function() {
+        $("#menu").toggle();
+        $(".icon2").toggleClass("change");
+        $("h2").toggleClass("leftward");
+      });
+   })
+</script>
+
+
+    <h2>Welcome to Hasana</h2>
+    <p>We make fine jewelery and clothing for men and women. We are also a
+        non-profit committed to bringing education to women around the world.
+        as women in STEM, our main goal in this work is to bring coding education
+        to women. Globally. We used only the finest, most organic, ethically
+        sourced materials, so buy 'em up while they last to support the furthering
+        of women's computer science education.</p>
+</body>
+</html>
