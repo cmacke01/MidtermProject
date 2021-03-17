@@ -88,7 +88,10 @@ h2 {
 p {
   font-size: 20px;
   margin-left: 30;
+  margin-right: 30;
   margin-top: 50px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .change .bar1 {
@@ -100,3 +103,37 @@ p {
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-13px, -13px);
 }
+
+body {
+  height: 100%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #8a7654;
+  width: 100%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  background-color: #fff6e6;
+  padding: 8px;
+  color: #6b9696;
+  font-size: 17px;
+  border-width: 0px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #e6dccc;
+}
+  button {
+    font-size: 30px;
+  }
