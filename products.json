@@ -1,18 +1,18 @@
 [
     {
-        "name": "Name0",
+        "name": "Shirt",
         "desc": "Desc0",
         "price": 0,
         "img": "Img0"
     },
     {
-        "name": "Name1",
+        "name": "Pants",
         "desc": "Desc1",
         "price": 1,
         "img": "Img1"
     },
     {
-        "name": "Name2",
+        "name": "Dress",
         "desc": "Desc2",
         "price": 2,
         "img": "Img2"
