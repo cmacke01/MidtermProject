@@ -16,5 +16,23 @@
         "desc": "Desc2",
         "price": 2,
         "img": "Img2"
+    },
+    {
+        "name": "Jacket",
+        "desc": "Desc3",
+        "price": 3,
+        "img": "Img3"
+    },
+    {
+        "name": "Hat",
+        "desc": "Desc4",
+        "price": 4,
+        "img": "Img4"
+    },
+    {
+        "name": "Shorts",
+        "desc": "Desc5",
+        "price": 5,
+        "img": "Img5"
     }
 ]
