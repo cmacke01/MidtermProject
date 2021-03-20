@@ -69,7 +69,7 @@
             $("#filter").change(function() {
                 option = $(this).find("option:selected").html();
                 $("#products").children().show();
-                if (option == "All") return;
+                if (option == "(select)" || option == "All") return;
                 $(".productPrice").each(function() {
                     string = $(this).html()
                     price = string.substring(string.indexOf("£") + 1);
