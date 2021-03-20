@@ -68,8 +68,9 @@
             // Filter the products.
             $("#filter").change(function() {
                 option = $(this).find("option:selected").html();
+                if (option == "(select)") return;
                 $("#products").children().show();
-                if (option == "(select)" || option == "All") return;
+                if (option == "All") return;
                 $(".productPrice").each(function() {
                     string = $(this).html()
                     price = string.substring(string.indexOf("£") + 1);
@@ -180,7 +181,7 @@
     </script>
 
     <!-- product html code -->
-    <h2>Products</h2>
+    <h2>Women</h2>
     <p>Page description...</p>
     <form>
         <label for="sort">Sort by: </label> 
