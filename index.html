@@ -1,21 +1,19 @@
 <html>
+
 <head>
     <title>Home - Hasana</title>
     <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
     <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-    <style>
-
-
-    </style>
 </head>
+
 <body>
+    
     <a href="index.html"> <!-- makes whole block into link -->
         <h1>hasana</h1>
     </a>
-
+    
     <a class="icon">
       <div class="icon2">
           <div class="bar1"></div>
@@ -23,16 +21,16 @@
           <div class="bar3"></div>
       </div>
     </a>
-
+    
     <div class="noShow" id=menu>
       <ul>
-          <a href="#"> <!-- TODO: add links -->
+          <a href="men.html"> <!-- TODO: add links -->
               <li>men</li>
           </a>
-          <a href="#">
+          <a href="women.html">
               <li>women</li>
           </a>
-          <a href="#">
+          <a href="jewelry.html">
               <li>jewelery</li>
           </a>
           <a href="#">
@@ -46,47 +44,45 @@
           </a>
       </ul>
     </div>
-
-<!-- toggle hamburger menu -->
-<script>
-   $(document).ready(function(){
-      $(".icon").click(function() {
-        $("#menu").toggle();
-        $(".icon2").toggleClass("change");
-        $("h2").toggleClass("leftward");
-      });
-   })
-</script>
-
-<!-- Reset menu and h2 positions after wide/small screen changes -->
-<script>
-    var mediaWideScreen = window.matchMedia('(min-width: 700px)');
-
-    function displayMenu(width){
-      if (width.matches) {
-        $("#menu").css("display", "block");
-        $("h2").removeClass("leftward");
-      }
-    }
-
-    mediaWideScreen.addListener(displayMenu);
-
-    var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
-
-    function h2Pos(width){
-      if (width.matches) {
-        $("#menu").css("display", "none");
-        $("h2").removeClass("leftward");
-        $(".icon2").removeClass("change");
-      }
-    }
-
-    mediaSmallScreen.addListener(h2Pos);
-
-</script>
-
-
-
+    
+    <!-- toggle hamburger menu -->
+    <script>
+       $(document).ready(function(){
+          $(".icon").click(function() {
+            $("#menu").toggle();
+            $(".icon2").toggleClass("change");
+            $("h2").toggleClass("leftward");
+          });
+       })
+    </script>
+    
+    <!-- Reset menu and h2 positions after wide/small screen changes -->
+    <script>
+        var mediaWideScreen = window.matchMedia('(min-width: 700px)');
+        
+        function displayMenu(width){
+          if (width.matches) {
+            $("#menu").css("display", "block");
+            $("h2").removeClass("leftward");
+          }
+        }
+        
+        mediaWideScreen.addListener(displayMenu);
+        
+        var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
+        
+        function h2Pos(width){
+          if (width.matches) {
+            $("#menu").css("display", "none");
+            $("h2").removeClass("leftward");
+            $(".icon2").removeClass("change");
+          }
+        }
+        
+        mediaSmallScreen.addListener(h2Pos);
+        
+    </script>
+    
     <h2>Welcome to Hasana</h2>
     <p>We make fine jewelery and clothing for men and women. We are also a
         non-profit committed to bringing education to women around the world.
@@ -94,12 +90,14 @@
         to women. Globally. We used only the finest, most organic, ethically
         sourced materials, so buy 'em up while they last to support the furthering
         of women's computer science education.  </p>
-
+        
     <div class= 'footer'>
       <table>
           <td> <a href="./index.html"> <button class="button button1"> About Us  </button> </a> </td>
           <td> <a href="./index.html"> <button >Contact Us</button> </a> </td>
       </table>
     </div>
+    
 </body>
+
 </html>

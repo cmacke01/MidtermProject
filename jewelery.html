@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <title>Products - Hasana</title>
+    <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script language="javascript">
+        products = [];
+        
+        // Get product information from the JSON file.
+        $(document).ready(function() 
+        {
+            // Display the products.
+            function display() {
+                disp_product = "";
+                for (i in products) {
+                    disp_product += "<div class='product'>";
+                    disp_product += "<div class='productName'>" + products[i].name + "</div>";
+                    disp_product += "<div class='productDesc'>" + products[i].desc + "</div>";
+                    disp_product += "<div class='productPrice'>&#163;" + products[i].price + "</div>";
+                    disp_product += "<img class='productImg' src='" + products[i].img + "' />";
+                    disp_product += "</div>";
+                }
+                $("#products").html(disp_product);
+            }
+            
+            // Get the product information from JSON file.
+            $.get("https://cmacke01.github.io/MidtermProject/men.json", 
+            function(data) 
+            {
+                data.forEach(function(product) 
+                {
+                    products.push(product);
+                });
+                display();
+            });
+            
+            // Sort the products.
+            $("#sort").change(function() {
+                option = $(this).find("option:selected").val();
+                if (option == "name") {
+                    products.sort(function(a, b) {
+                        if (a.name < b.name) return -1;
+                        if (a.name > b.name) return 1;
+                        return 0;
+                    });
+                }
+                if (option == "priceLH") {
+                    products.sort(function(a, b) {return a.price - b.price;});
+                }
+                if (option == "priceHL") {
+                    products.sort(function(a, b) {return b.price - a.price;});
+                }
+                display();
+                
+                // Maintain current filter if selected.
+                option = $("#filter").find("option:selected").html();
+                if (option == "(select)" || option == "All") return;
+                $(".productPrice").each(function() {
+                    string = $(this).html()
+                    price = string.substring(string.indexOf("£") + 1);
+                    if (price > option) $(this).parent().hide();
+                });
+            });
+            
+            // Filter the products.
+            $("#filter").change(function() {
+                option = $(this).find("option:selected").html();
+                $("#products").children().show();
+                if (option == "All") return;
+                $(".productPrice").each(function() {
+                    string = $(this).html()
+                    price = string.substring(string.indexOf("£") + 1);
+                    if (price > option) $(this).parent().hide();
+                });
+            });
+        });
+    </script>
+    <style>
+        p, form {
+            font-size: 20px;
+            margin: 40px 40px 0px;
+            padding: 0px;
+        }
+        .productName {
+            font-size: 30px;
+            margin: 10px;
+        }
+        .productDesc {
+            font-size: 16px;
+            margin: 20px;
+        }
+        .productPrice {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        img {
+            margin: 20px 0px;
+            border: 4px solid #8a7654; 
+        }
+    </style>
+</head>
+
+<body>
+    
+    <a href="index.html"> <!-- makes whole block into link -->
+        <h1>hasana</h1>
+    </a>
+    
+    <a class="icon">
+      <div class="icon2">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+    </a>
+    
+    <div class="noShow" id=menu>
+      <ul>
+          <a href="men.html"> <!-- TODO: add links -->
+              <li>men</li>
+          </a>
+          <a href="women.html">
+              <li>women</li>
+          </a>
+          <a href="jewelry.html">
+              <li>jewelery</li>
+          </a>
+          <a href="#">
+              <li>contact</li>
+          </a>
+          <a href="#">
+              <li>about</li>
+          </a>
+          <a href="#">
+              <li id="cart">cart</li>
+          </a>
+      </ul>
+    </div>
+    
+    <!-- toggle hamburger menu -->
+    <script>
+       $(document).ready(function(){
+          $(".icon").click(function() {
+            $("#menu").toggle();
+            $(".icon2").toggleClass("change");
+            $("h2").toggleClass("leftward");
+          });
+       })
+    </script>
+    
+    <!-- Reset menu and h2 positions after wide/small screen changes -->
+    <script>
+        var mediaWideScreen = window.matchMedia('(min-width: 700px)');
+        
+        function displayMenu(width){
+          if (width.matches) {
+            $("#menu").css("display", "block");
+            $("h2").removeClass("leftward");
+          }
+        }
+        
+        mediaWideScreen.addListener(displayMenu);
+        
+        var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
+        
+        function h2Pos(width){
+          if (width.matches) {
+            $("#menu").css("display", "none");
+            $("h2").removeClass("leftward");
+            $(".icon2").removeClass("change");
+          }
+        }
+        
+        mediaSmallScreen.addListener(h2Pos);
+        
+    </script>
+
+    <!-- product html code -->
+    <h2>Products</h2>
+    <p>Page description...</p>
+    <form>
+        <label for="sort">Sort by: </label> 
+        <select name="sort" id="sort">
+            <option>(select)</option>
+            <option value="name">Name</option>
+            <option value="priceLH">Price: Low to High</option>
+            <option value="priceHL">Price: High to Low</option>
+        </select><br />
+        <label for="filter">Filter up to price: &#163;</label> 
+        <select name="filter" id="filter">
+            <option>(select)</option>
+            <option>1</option> <!-- replace with real prices -->
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>All</option>
+        </select>
+    </form>
+    <div id="products">&nbsp;</div>
+
+    <div class= 'footer'>
+      <table>
+          <td> <a href="./index.html"> <button class="button button1"> About Us  </button> </a> </td>
+          <td> <a href="./index.html"> <button >Contact Us</button> </a> </td>
+      </table>
+    </div>
+    
+</body>
+
+</html>
