@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>aboutUsPage</title>
+	<link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	
+	<style>
+		
+		.footer {
+          bottom: 0px;
+          position: fixed;
+          background-color: #8a7654;
+          width: 100%;
+        }
+
+        table {
+          /* width: 100%; */
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        button {
+          background-color: #fff6e6;
+          padding: 8px;
+          color: #6b9696;
+          font-size: 17px;
+          border-width: 0px;
+          font-family: "Times New Roman", Times, serif;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        button:hover {
+          background-color: #e6dccc;
+        }
+		
+		
+        @media only screen and (max-width: 600px) {
+          button {
+            font-size: 30px;
+          }
+		
+		}   
+		
+        h1 {
+            font-size: 140px;
+            font-family: serif;
+            text-transform: lowercase;
+            color: #8a7654;
+            background-image: url("banner.jpg");
+            height: 170px; /* background image height */
+            box-sizing: border-box;
+            margin: 35px 0px;
+            border-top: 5px solid #8a7654;
+            border-bottom: 5px solid #8a7654;
+            padding: 35px 35px 0px; /* top padding = (height - font size) + 5 */
+        }
+        h1:hover {
+            opacity: 0.75;
+        }
+		
+		/* about Us CSS  */
+		h2 {
+			font-family: "Times New Roman", Times, serif;
+			text-align: center;
+			font-size: bold, 17px;
+		
+		}
+		
+		p{
+			font-family: "Times New Roman", Times, Serif;
+			text-align: left; 
+			font-size:bold, 10px;
+		}
+		
+    </style>
+</head>
+
+<body>
+	<a href="index.html"> <!-- makes whole block into link -->
+        <h1>hasana</h1>
+    </a>
+
+    <a class="icon">
+      <div class="icon2">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+    </a>
+
+    <div class="noShow" id="menu">
+      <ul>
+          <a href="#"> <!-- TODO: add links -->
+              <li>men</li>
+          </a>
+          <a href="#">
+              <li>women</li>
+          </a>
+          <a href="#">
+              <li>jewelery</li>
+          </a>
+          <a href="contactPage.html">
+              <li>contact</li>
+          </a>
+          <a href="aboutUsPage.html">
+              <li>about</li>
+          </a>
+          <a href="#">
+              <li id="cart">cart</li>
+          </a>
+      </ul>
+    </div>
+
+    <div class= "footer">
+      <table>
+          <td> <a href="aboutUsPage.html"> <button class="button button1"> About Us  </button> </a> </td>
+          <td> <a href="contactPage.html"> <button >Contact Us</button> </a> </td>
+      </table>
+    </div>
+
+<!-- toggle hamburger menu -->
+<script>
+   $(document).ready(function(){
+      $(".icon").click(function() {
+        $("#menu").toggle();
+        $(".icon2").toggleClass("change");
+        $("h2").toggleClass("leftward");
+      });
+   })
+</script>
+	<main class="main shadow">
+    	<h2>About Us</h2>
+		<br>
+		<p>	Guiltless luxury for the charitable life.
+		Our approach to corporate social responsibility is clear.  Hasana, Inc. began in 2009 by Jessica George, the Executive Director and Founder of the Apareció Foundation, out of a desire to create a unique platform for socially responsible luxury. It was this passion for women’s economic opportunities coupled with the idea of harnessing the appeal of luxury goods to raise funds for educational initiatives designed to promote women’s economic and mentorship opportunities that launched the Hasana, Inc. brand. </p>
+		<br>
+		<p>100% of the net proceeds from sales benefit the Apareció Foundation (Parent Corporation) 	and girl’s education.  The namesake of the Apareció Foundation, Felix Apareció George, who 	grew up in the Dutch Caribbean island of Curacao, is the inspiration for Hasana, Inc.
+
+		The Hasana, Inc. brand is synonymous with fine craftsmanship, a unique product mix and is relatable with an element of wit and playful sophistication.
+
+		To continue our work as a purveyor of luxury goods and a proponent in workforce development initiatives for women, we create uniqueness and provide a sense of belonging for those seeking to live a more charitable life.  Today, Hasana, Inc. has grown from ten unique designers to over fifty-two and counting. </p>
+		<br>
+		<br>
+		<p>
+		</p>
+	</main>
+</body>
+</html>
