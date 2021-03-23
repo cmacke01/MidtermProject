@@ -1,0 +1,458 @@
+<html>
+<head>
+    
+    <title> Hasana Checkout </title>
+    
+     <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
+    
+    
+</head>
+<body>
+    <style> 
+                    
+        body{
+            background-color:  #fff6e6;  
+        }
+        
+        input[type = "number"] {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        
+        form{
+            align-content: center;
+            background-color: #c5b7a0;
+            /*background-color: #e6ccb3; /*#8a7654; -> other color option*/
+            border-radius: 5px;
+            margin-left: 150px;
+            margin-right: 150px;
+            text-align: center;
+            
+        }
+        
+        form[id = "mensForm"]:hover, form[id = "womensForm"]:hover, form[id = "jewelryForm"]:hover{
+            font-weight: bold;
+            border: solid #000;
+            border-width: 2px;
+        }
+        
+        label{
+            font-size: 22px;
+        }
+        
+        form[id = "paymentForm"]:hover, form[id = "shipAdd"]:hover{
+            border: solid #000;
+            border-width: 1.5px;
+        }
+        
+        input[type = "number"]:hover{
+            border-color: #ff0000 ;
+            font-weight: bold;
+        }       
+        
+        input[type = "button"]:hover {
+            border-color: #ff0000 ;
+            font-weight: bold;
+        }
+        
+        div[id = "subtotal"], div[id = "total"]{
+            font-family: serif;
+        }
+        
+        div{
+            padding: 5px;
+        }
+        
+        div[id = "shipping"], div[id = "subtotal"], div[id = "total"], div[id = "shippingTotal"]{
+            text-align: center;
+        }
+        
+        h2{
+            text-align: center;
+            color: #8a7654;
+            font-family: serif;
+        }
+        div[id = "bottom"]{
+            display: flex;
+        }
+        form[id = "paymentForm"],form[id="shipAdd"]{
+            width: 50%;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        div[id = "bottomHeaders"]{
+            display: flex;
+        }
+        div[id = "paymentHeader"],div[id="shippingHeader"]{
+            width: 50%;
+        }
+        input[type = "button"] {
+            width: 25%;
+            border-radius: 50px;
+            align-items: center;
+        }
+        p[id = "nameAdd"], p[id = "cityAdd"], p[id = "streetAdd"], p[id = "stateAdd"], p[id = "cardNum"], p[id = "CV"], p[id = "expiration"], p[id = "giftNum"]{
+           margin: 0px;
+           padding: 5px;
+           margin: 0px;
+           font-size: 16px;
+        }
+        
+    
+    
+    </style>
+    
+    <h1> hasana </h1> 
+    
+     <div class="noShow" id=menu>
+      <ul>
+          <a href="#"> <!-- TODO: add links -->
+              <li>men</li>
+          </a>
+          <a href="#">
+              <li>women</li>
+          </a>
+          <a href="#">
+              <li>jewelery</li>
+          </a>
+          <a href="#">
+              <li>contact</li>
+          </a>
+          <a href="#">
+              <li>about</li>
+          </a>
+          <a href="#">
+              <li id="cart">cart</li>
+          </a>
+      </ul>
+    </div>
+    
+    
+    <h2> Your Hasana Shoppping Cart: </h2>
+    
+     <form id= "mensForm">
+         
+        <label> <strong> MEN'S CLOTHING </strong> </label> <br>
+        Shirt ($15): <input type = "number" class = "mens" id = "shirtM" min = "0"> <br><br>
+        Pants ($20): <input type = "number" class = "mens" id = "pantsM" min = "0"> <br><br>
+        Jacket ($40): <input type = "number" class = "mens" id = "jacketM"  min = "0"> <br><br>
+        Hat &nbsp; ($10): &nbsp; <input type = "number" class = "mens" id = "hat" min = "0"> <br><br>
+        Shorts ($15): <input type = "number" class = "mens" id = "shortsM"  min = "0"> <br><br>
+    </form>
+    <form id = "womensForm"> 
+        <label> <strong> WOMEN'S CLOTHING </strong> </label> <br>
+        Shirt ($15): <input type = "number" class = "womens" id = "shirtW"  min = "0"> <br><br>
+        Pants ($20): <input type = "number" class = "womens" id = "pantsW"  min = "0"> <br><br>
+        Jacket ($40): <input type = "number" class = "womens" id = "jacketW"  min = "0"> <br><br>
+        Dress ($30): <input type = "number" class = "womens" id = "dress" min = "0"> <br><br>
+        Shorts ($15): <input type = "number" class = "womens" id = "shortsW" min = "0"> <br><br>
+    </form>
+    <form id = "jewelryForm">
+        <label> <strong> JEWELRY </strong> </label> <br>
+        Necklace ($50): <input type = "number" class = "jewelry" id = "necklace" min = "0"> <br><br>
+        Earrings ($80): <input type = "number" class = "jewelry" id = "earrings" min = "0"> <br><br>
+        Bracelet ($40): <input type = "number" class = "jewelry" id = "bracelet" min = "0"> <br><br>
+        Watch ($60): <input type = "number" class = "jewelry" id = "watch" min = "0"> <br><br>
+         
+    </form>
+    
+    
+    <script> 
+        
+        function paymentTotal(){
+            var shirtM = parseInt(document.getElementById("shirtM").value * 15);
+            var pantsM = parseInt(document.getElementById("pantsM").value * 20);
+            var jacketM = parseInt(document.getElementById("jacketM").value * 40);
+            var hat = parseInt(document.getElementById("hat").value * 10);
+            var shortsM = parseInt(document.getElementById("shortsM").value * 15);
+            var shirtW = parseInt(document.getElementById("shirtW").value * 15);
+            var pantsW = parseInt(document.getElementById("pantsW").value * 20);
+            var jacketW = parseInt(document.getElementById("jacketW").value * 40);
+            var shortsW = parseInt(document.getElementById("shortsW").value * 20);
+            var dress = parseInt(document.getElementById("dress").value * 30);
+            var necklace = parseInt(document.getElementById("necklace").value * 50);
+            var earrings = parseInt(document.getElementById("earrings").value * 80);
+            var bracelet = parseInt(document.getElementById("bracelet").value * 40);
+            var watch = parseInt(document.getElementById("watch").value * 60);
+            
+            
+            var totalM = shirtM + pantsM + jacketM + shortsM + hat;
+            var totalW = shortsW + pantsW + jacketW + shortsW + dress;
+            var totalJ = necklace + earrings + watch + bracelet;
+            
+            var total = totalM + totalW + totalJ;
+            var taxTotal = total + total * .0625;
+            
+          
+            
+            
+            document.getElementById("subtotal").innerHTML = ("Your subtotal is: $" + total.toFixed(2) + "<br>")
+            document.getElementById("total").innerHTML = ("Your total after tax is: $" + taxTotal.toFixed(2))
+            if(total >= 100){
+                document.getElementById("shippingTotal").innerHTML = ("Your order qualifies for free shipping! <br>Your total is $" +  taxTotal.toFixed(2) + "<br>");
+            }else if(total == 0){
+                document.getElementById("shippingTotal").innerHTML = ("Your shopping cart is empty! If you would like to make a purchase, please refer to the checkout menu above.");
+            }else{
+                document.getElementById("shippingTotal").innerHTML = ("Shipping cost: $" + 15 + "<br>" + "Your total is: $" + (taxTotal + 15).toFixed(2));
+            }
+            document.getElementById("total").value = total;
+            
+            
+        }
+    
+        
+
+    </script>
+    
+    
+    <div id = "shipping" style = "font-size: 18px;">
+        <strong> All orders of $100 or more are eligibable for free shipping! </strong>
+    </div>
+    
+    <div style="text-align:center;" id = "btn1" > 
+        <input type = "button" value = "Calculate Payment" id = "btn1" onclick = "paymentTotal()">
+    </div>
+    
+    
+    <div id = "subtotal" > 
+    </div>    
+    
+    <div id = "total" value = 0> 
+        Total: $0.00
+    </div>
+    
+    
+    <div id = "shippingTotal">
+    </div>
+    
+    <div id = "bottomHeaders">
+        <div id= "paymentHeader">
+            <h2> Payment Method </h2>
+        </div>
+        <div id= "shippingHeader">
+            <h2> Shipping Information </h2>
+        </div>    
+    </div>
+     
+    
+    <div id = "bottom"> 
+       
+    <form id = "paymentForm">
+         
+       <input type="radio"  name= "payment" id = "card" value = "card" checked = "checked"/> Credit Card  
+	   <input type="radio"  name= "payment" id = "giftcard" value = "giftcard"  /> Gift Card
+    
+        <p id = "cardNum"> <strong> Card Number: </strong> <input type= "text" id = "cardNumVal" /></p>
+        <p id = "CV"> <strong> CV: </strong>  <input type= "text" id = "CVVal"  /></p>
+        <p id = "expiration"> <strong> Expiration: </strong> Month: <select id='month'>
+                        <option selected value>Janaury</option>
+                        <option >February</option>
+                        <option >March</option>
+                        <option >April</option>
+                        <option >May</option>
+                        <option >June</option>
+                        <option >July</option>
+                        <option >August</option>
+                        <option >September</option>
+                        <option >October</option>
+                        <option >November</option>
+                        <option >December</option>
+          </select> Year: <select id='year'>
+                        <option selected value>2021</option>
+                        <option >2022</option>
+                        <option >2023</option>
+                        <option >2024</option>
+                        <option >2025</option>
+                        <option >2026</option>
+                        <option >2027</option>
+                        <option >2028</option>
+                        <option >2029</option>
+                        <option >2030</option>
+                        <option >2031</option>
+          </select></p>
+        <p id = "giftNum"> <strong> Gift Card Number: </strong> <input type="text" id = "giftVal" /></p>
+        
+                
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+        $("#giftNum").hide();
+        
+        
+        $(document).ready(function(){
+            $("#card").change(function(){
+                $("#giftNum").hide();
+                $("#cardNum").show();
+                $("#CV").show();
+                $("#expiration").show();                      
+            });
+            $("#giftcard").change(function(){
+                $("#giftNum").show();
+                $("#cardNum").hide();
+                $("#CV").hide();
+                $("#expiration").hide();
+            });            
+        });
+        
+        // function serves to check all values entered by the user to make sure they are valid
+        function orderCheck(){
+            
+            var cardNum = document.getElementById("cardNumVal").value;
+            var cvNum = document.getElementById("CVVal").value;
+            var giftNum = document.getElementById("giftVal").value;
+            var nameText = document.getElementById("nameVal").value;
+            var cityText = document.getElementById("cityVal").value;
+            var streetText = document.getElementById("streetVal").value;
+            
+            var total = document.getElementById("total").value;
+            
+            if(total > 0){
+                
+                if(document.getElementById("card").checked == true){
+                
+                if(cardNum >= 0 && cardNum.length == 16){
+                    if(cvNum >= 0 && cvNum.length == 3){
+                        if (/^[a-zA-Z]/.test(nameText) && nameText != "") {
+                            if(/^[a-zA-Z]/.test(cityText) && cityText != ""){
+                                if(streetText != ""){
+                                    location.href='ThankYouPage.html'
+                                }else{
+                                    alert("Please enter a valid street name")
+                                }
+                            }else{
+                                alert("Please enter a valid city name")
+                            }
+                            
+                        }else{
+                            alert("Please enter a valid name with only letters and spaces")
+                        }
+                        
+                    }else{
+                        alert("Please enter a valid CV")
+                    }
+
+                }else{
+                        alert("Please enter valid credit card number")
+                    }                    
+            }else{
+                if(giftNum >=0 && giftNum.length == 16){
+                    if(/^[a-zA-Z]/.test(nameText) && nameText != ""){
+                        if(/^[a-zA-Z]/.test(cityText) && cityText != ""){
+                            if(streetText != ""){
+                                location.href='ThankYouPage.html'
+                            }else{
+                                alert("Please enter a valid street name")
+                            }
+                        }else{
+                            alert("Please enter a valid city name")
+                        }
+                            
+                    }else{
+                        alert("Please enter a valid name with only letters and spaces")
+                    }
+                }else{
+                    alert("Please enter a valid gift card number")
+                }
+            
+            }
+        
+        
+            }else{
+                alert("Your cart is empty. Make sure to add items to your cart before placing your order.")
+            }
+        }
+            
+    
+    
+    </script>
+    </form>
+        
+    <form id = "shipAdd"> 
+        <p id = "nameAdd"> <strong> Name: </strong> <input type= "text" id = "nameVal" /></p>
+        <p id = "cityAdd"> <strong> City:  </strong> <input type= "text"  id = "cityVal" /></p>
+        <p id = "streetAdd"> <strong> Street: </strong> <input type="text" id = "streetVal"  /></p>
+        <p id = "stateAdd"> <strong> State: </strong> <select>
+	<option >Alabama</option>
+	<option >Alaska</option>
+	<option >Arizona</option>
+	<option >Arkansas</option>
+	<option >California</option>
+	<option >Colorado</option>
+	<option >Connecticut</option>
+	<option >Delaware</option>
+	<option >District Of Columbia</option>
+	<option >Florida</option>
+	<option >Georgia</option>
+	<option >Hawaii</option>
+	<option >Idaho</option>
+	<option >Illinois</option>
+	<option >Indiana</option>
+	<option >Iowa</option>
+	<option >Kansas</option>
+	<option >Kentucky</option>
+	<option >Louisiana</option>
+	<option >Maine</option>
+	<option >Maryland</option>
+	<option >Massachusetts</option>
+	<option >Michigan</option>
+	<option >Minnesota</option>
+	<option >Mississippi</option>
+	<option >Missouri</option>
+	<option >Montana</option>
+	<option >Nebraska</option>
+	<option >Nevada</option>
+	<option >New Hampshire</option>
+	<option >New Jersey</option>
+	<option >New Mexico</option>
+	<option >New York</option>
+	<option >North Carolina</option>
+	<option >North Dakota</option>
+	<option >Ohio</option>
+	<option >Oklahoma</option>
+	<option >Oregon</option>
+	<option >Pennsylvania</option>
+	<option >Rhode Island</option>
+	<option >South Carolina</option>
+	<option >South Dakota</option>
+	<option >Tennessee</option>
+	<option >Texas</option>
+	<option >Utah</option>
+	<option >Vermont</option>
+	<option >Virginia</option>
+	<option >Washington</option>
+	<option >West Virginia</option>
+	<option >Wisconsin</option>
+	<option >Wyoming</option>
+</select>	</p>
+        
+    </form>   
+        
+
+    </div>
+    
+    <div id = "cardDiv"> 
+    
+    
+    </div>
+    
+    <div style="text-align:center;" id = "btn2" > 
+        
+        <input type="button" onclick = "orderCheck();" value="Place Your Order Here" />
+    
+    </div>
+   
+    <div class= 'footer'>
+      <table>
+          <td> <a href="./index.html"> <button class="button button1"> About Us  </button> </a> </td>
+          <td> <a href="./index.html"> <button >Contact Us</button> </a> </td>
+      </table>
+    </div>
+    
+</body>
+
+
+</html>
