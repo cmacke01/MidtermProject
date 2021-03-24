@@ -7,7 +7,7 @@
     },
     {
         "name": "Pants",
-        "desc": "Environmentally-unfriendly.",
+        "desc": "Eco-friendliest.",
         "price": 20,
         "img": "images/pants_women.jpg"
     },
@@ -19,7 +19,7 @@
     },
     {
         "name": "Jacket",
-        "desc": "Sourced through hand-to-animal combat.",
+        "desc": "Sustainably sourced through hand-to-animal combat.",
         "price": 40,
         "img": "images/jacket_women.jpg"
     },
