@@ -19,7 +19,7 @@
                     disp_product += "<div class='product'>";
                     disp_product += "<div class='productName'>" + products[i].name + "</div>";
                     disp_product += "<div class='productDesc'>" + products[i].desc + "</div>";
-                    disp_product += "<div class='productPrice'>&#163;" + products[i].price + "</div>";
+                    disp_product += "<div class='productPrice'>$" + products[i].price + "</div>";
                     disp_product += "<img class='productImg' src='" + products[i].img + "' />";
                     disp_product += "</div>";
                 }
@@ -193,7 +193,7 @@
             <option value="priceLH">Price: Low to High</option>
             <option value="priceHL">Price: High to Low</option>
         </select><br />
-        <label for="filter">Filter up to price: &#163;</label> 
+        <label for="filter">Filter up to price: $</label> 
         <select name="filter" id="filter">
             <option>(select)</option>
             <option>10</option>
