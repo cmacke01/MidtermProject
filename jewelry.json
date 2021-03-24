@@ -1,38 +1,26 @@
 [
     {
-        "name": "Shirt",
-        "desc": "Desc0",
-        "price": 0,
-        "img": "Img0"
+        "name": "Necklace",
+        "desc": "Same day shipping for anniversary gifts.",
+        "price": 50,
+        "img": "images/necklace.jpg"
     },
     {
-        "name": "Pants",
-        "desc": "Desc1",
-        "price": 1,
-        "img": "Img1"
+        "name": "Earrings",
+        "desc": "$$$.",
+        "price": 80,
+        "img": "images/earrings.jpg"
     },
     {
-        "name": "Dress",
-        "desc": "Desc2",
-        "price": 2,
-        "img": "Img2"
+        "name": "Bracelet",
+        "desc": "There's no way to take it off.",
+        "price": 40,
+        "img": "images/bracelet.jpg"
     },
     {
-        "name": "Jacket",
-        "desc": "Desc3",
-        "price": 3,
-        "img": "Img3"
-    },
-    {
-        "name": "Hat",
-        "desc": "Desc4",
-        "price": 4,
-        "img": "Img4"
-    },
-    {
-        "name": "Shorts",
-        "desc": "Desc5",
-        "price": 5,
-        "img": "Img5"
+        "name": "Watch",
+        "desc": "90% less functional and 100% more stylish than your phone.",
+        "price": 60,
+        "img": "images/watch.jpg"
     }
 ]

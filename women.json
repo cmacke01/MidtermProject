@@ -1,38 +1,32 @@
 [
     {
         "name": "Shirt",
-        "desc": "Desc0",
-        "price": 0,
-        "img": "Img0"
+        "desc": "Wear it once and buy another one.",
+        "price": 15,
+        "img": "images/shirt_women.jpg"
     },
     {
         "name": "Pants",
-        "desc": "Desc1",
-        "price": 1,
-        "img": "Img1"
+        "desc": "Environmentally-unfriendly.",
+        "price": 20,
+        "img": "images/pants_women.jpg"
     },
     {
         "name": "Dress",
-        "desc": "Desc2",
-        "price": 2,
-        "img": "Img2"
+        "desc": "She seems rather upset.",
+        "price": 30,
+        "img": "images/dress_women.jpg"
     },
     {
         "name": "Jacket",
-        "desc": "Desc3",
-        "price": 3,
-        "img": "Img3"
-    },
-    {
-        "name": "Hat",
-        "desc": "Desc4",
-        "price": 4,
-        "img": "Img4"
+        "desc": "Sourced through hand-to-animal combat.",
+        "price": 40,
+        "img": "images/jacket_women.jpg"
     },
     {
         "name": "Shorts",
-        "desc": "Desc5",
-        "price": 5,
-        "img": "Img5"
+        "desc": "Limited-time offer: 99% OFF ($1500 VALUE).",
+        "price": 15,
+        "img": "images/shorts_women.jpg"
     }
 ]

@@ -73,7 +73,8 @@
                 if (option == "All") return;
                 $(".productPrice").each(function() {
                     string = $(this).html()
-                    price = string.substring(string.indexOf("£") + 1);
+                    str_price = string.substring(string.indexOf("£") + 1);
+                    price = parseInt(str_price);
                     if (price > option) $(this).parent().hide();
                 });
             });
@@ -194,11 +195,10 @@
         <label for="filter">Filter up to price: &#163;</label> 
         <select name="filter" id="filter">
             <option>(select)</option>
-            <option>1</option> <!-- replace with real prices -->
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
             <option>All</option>
         </select>
     </form>

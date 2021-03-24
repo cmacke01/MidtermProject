@@ -1,38 +1,32 @@
 [
     {
         "name": "Shirt",
-        "desc": "Desc0",
-        "price": 0,
-        "img": "Img0"
+        "desc": "Optional, but recommended.",
+        "price": 15,
+        "img": "images/shirt_men.jpg"
     },
     {
         "name": "Pants",
-        "desc": "Desc1",
-        "price": 1,
-        "img": "Img1"
-    },
-    {
-        "name": "Dress",
-        "desc": "Desc2",
-        "price": 2,
-        "img": "Img2"
+        "desc": "Can't leave home without them.",
+        "price": 20,
+        "img": "images/pants_men.jpg"
     },
     {
         "name": "Jacket",
-        "desc": "Desc3",
-        "price": 3,
-        "img": "Img3"
+        "desc": "You might look as cool as this guy.",
+        "price": 40,
+        "img": "images/jacket_men.jpg"
     },
     {
         "name": "Hat",
-        "desc": "Desc4",
-        "price": 4,
-        "img": "Img4"
+        "desc": "Available in bulk.",
+        "price": 10,
+        "img": "images/hat_men.jpg"
     },
     {
         "name": "Shorts",
-        "desc": "Desc5",
-        "price": 5,
-        "img": "Img5"
+        "desc": "Sizes: Short, Shorter, and Shortest (use your judgement).",
+        "price": 15,
+        "img": "images/shorts_men.jpg"
     }
 ]
