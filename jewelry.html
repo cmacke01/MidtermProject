@@ -60,7 +60,7 @@
                 if (option == "(select)" || option == "All") return;
                 $(".productPrice").each(function() {
                     string = $(this).html()
-                    price = string.substring(string.indexOf("£") + 1);
+                    price = string.substring(string.indexOf("$") + 1);
                     if (price > option) $(this).parent().hide();
                 });
             });

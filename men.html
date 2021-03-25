@@ -73,7 +73,7 @@
                 if (option == "All") return;
                 $(".productPrice").each(function() {
                     string = $(this).html()
-                    str_price = string.substring(string.indexOf("£") + 1);
+                    str_price = string.substring(string.indexOf("$") + 1);
                     price = parseInt(str_price);
                     if (price > option) $(this).parent().hide();
                 });
