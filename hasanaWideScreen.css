@@ -59,7 +59,7 @@ p {
 }
 
 body {
-  height: 100%;
+    margin-bottom: 75px;  
 }
 
 .footer {
