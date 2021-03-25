@@ -3,10 +3,10 @@
     
     <title> Hasana Checkout </title>
     
-     <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 701px) " href="hasanaWideScreen.css"/>
     <link rel="stylesheet" media="screen and (max-width: 700px) " href="hasanaSmallScreen.css"/>
-    
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
     <style> 
@@ -62,9 +62,11 @@
             font-family: serif;
         }
         
+        /* breaks hamburger menu
         div{
             padding: 5px;
         }
+        */
         
         div[id = "shipping"], div[id = "subtotal"], div[id = "total"], div[id = "shippingTotal"]{
             text-align: center;
@@ -109,6 +111,14 @@
         <h1>hasana</h1>
     </a>
     
+    <a class="icon">
+      <div class="icon2">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+    </a>
+    
      <div class="noShow" id=menu>
       <ul>
           <a href="men.html">
@@ -132,6 +142,43 @@
       </ul>
     </div>
     
+    <!-- toggle hamburger menu -->
+    <script>
+       $(document).ready(function(){
+          $(".icon").click(function() {
+            $("#menu").toggle();
+            $(".icon2").toggleClass("change");
+            $("h2").toggleClass("leftward");
+          });
+       })
+    </script>
+
+    <!-- Reset menu and h2 positions after wide/small screen changes -->
+    <script>
+        var mediaWideScreen = window.matchMedia('(min-width: 700px)');
+
+        function displayMenu(width){
+          if (width.matches) {
+            $("#menu").css("display", "block");
+            $("h2").removeClass("leftward");
+          }
+        }
+
+        mediaWideScreen.addListener(displayMenu);
+
+        var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
+
+        function h2Pos(width){
+          if (width.matches) {
+            $("#menu").css("display", "none");
+            $("h2").removeClass("leftward");
+            $(".icon2").removeClass("change");
+          }
+        }
+
+        mediaSmallScreen.addListener(h2Pos);
+
+    </script>
     
     <h2> Your Hasana Shoppping Cart: </h2>
     
