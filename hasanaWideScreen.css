@@ -99,3 +99,14 @@ body {
   display: block;
   visibility: visible;
 }
+
+.product {
+    text-align: center;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 2%;
+    /* border: 1px solid #000; for debugging */
+    padding: 10px;
+    box-sizing: border-box;
+}
