@@ -11,7 +11,7 @@ h1 {
   font-size: 140px;
   font-family: serif;
   text-transform: lowercase;
-  font-weight: normal;
+  font-weight: bold;
   color: #8a7654;
   background-image: url("images/banner.jpg");
   height: 170px; /* background image height */
@@ -19,7 +19,7 @@ h1 {
   margin: 35px 0px;
   border-top: 5px solid #8a7654;
   border-bottom: 5px solid #8a7654;
-  padding: 32px 35px 0px; /* top padding = (height - font size) + 5 */
+  padding: 35px 35px 0px; /* top padding = (height - font size) + 5 */
 }
 
 h1:hover {
