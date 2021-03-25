@@ -11,7 +11,7 @@ h1 {
   text-transform: lowercase;
   color: #8a7654;
   font-weight: normal;
-  background-image: url("banner.jpg");
+  background-image: url("images/banner.jpg");
   height: 170px; /* background image height */
   box-sizing: border-box;
   margin: 35px 0px;
