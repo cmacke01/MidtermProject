@@ -140,18 +140,46 @@
           </a>
       </ul>
     </div>
-
     
+    <!-- toggle hamburger menu -->
+    <script>
+       $(document).ready(function(){
+          $(".icon").click(function() {
+            $("#menu").toggle();
+            $(".icon2").toggleClass("change");
+            $("h2").toggleClass("leftward");
+          });
+       })
+    </script>
+    
+    <!-- Reset menu and h2 positions after wide/small screen changes -->
+    <script>
+        var mediaWideScreen = window.matchMedia('(min-width: 700px)');
+        
+        function displayMenu(width){
+          if (width.matches) {
+            $("#menu").css("display", "block");
+            $("h2").removeClass("leftward");
+          }
+        }
+        
+        mediaWideScreen.addListener(displayMenu);
+        
+        var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
+        
+        function h2Pos(width){
+          if (width.matches) {
+            $("#menu").css("display", "none");
+            $("h2").removeClass("leftward");
+            $(".icon2").removeClass("change");
+          }
+        }
+        
+        mediaSmallScreen.addListener(h2Pos);
+        
+    </script>
 
-<!-- toggle hamburger menu -->
 <script>
-   $(document).ready(function(){
-      $(".icon").click(function() {
-        $("#menu").toggle();
-        $(".icon2").toggleClass("change");
-        $("h2").toggleClass("leftward");
-      });
-   })
 	/* added for contact submit button*/
 	function success() {
 		// document.write("Thank you for taking the time to fill out this form! We appreciate your feedback. Best of luck on your search for accessories! Know that if you decide to go with us, we are contributing to the growth of womens' prescence in higher education as well as The Aparecio Foundation!");

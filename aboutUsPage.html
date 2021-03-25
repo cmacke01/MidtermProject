@@ -133,6 +133,44 @@
           </a>
       </ul>
     </div>
+	
+	<!-- toggle hamburger menu -->
+    <script>
+       $(document).ready(function(){
+          $(".icon").click(function() {
+            $("#menu").toggle();
+            $(".icon2").toggleClass("change");
+            $("h2").toggleClass("leftward");
+          });
+       })
+    </script>
+    
+    <!-- Reset menu and h2 positions after wide/small screen changes -->
+    <script>
+        var mediaWideScreen = window.matchMedia('(min-width: 700px)');
+        
+        function displayMenu(width){
+          if (width.matches) {
+            $("#menu").css("display", "block");
+            $("h2").removeClass("leftward");
+          }
+        }
+        
+        mediaWideScreen.addListener(displayMenu);
+        
+        var mediaSmallScreen = window.matchMedia('(max-width: 700px)');
+        
+        function h2Pos(width){
+          if (width.matches) {
+            $("#menu").css("display", "none");
+            $("h2").removeClass("leftward");
+            $(".icon2").removeClass("change");
+          }
+        }
+        
+        mediaSmallScreen.addListener(h2Pos);
+        
+    </script>
 
     <div class= "footer">
       <table>
@@ -140,17 +178,7 @@
           <td style="text-align: left"> <a href="contactPage.html"> <button >Contact Us</button> </a> </td>
       </table>
     </div>
-
-<!-- toggle hamburger menu -->
-<script>
-   $(document).ready(function(){
-      $(".icon").click(function() {
-        $("#menu").toggle();
-        $(".icon2").toggleClass("change");
-        $("h2").toggleClass("leftward");
-      });
-   })
-</script>
+	
 	<main class="main shadow">
     	<h2>About Us</h2>
 		<br>
